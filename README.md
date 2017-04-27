@@ -16,7 +16,6 @@ $ open https://cmake.org/
 
 ```bash
 $ export GITHUB_USERNAME=<имя_пользователя>
-$ export GITHUB_GROUP=<название_группы_репозиториев>
 ```
 
 ```bash
@@ -108,7 +107,7 @@ hello
 ```
 
 ```bash
-$ git clone https://github.com/${GITHUB_GROUP}/lab3 tmp
+$ git clone https://github.com/tp-labs/lab3 tmp
 $ mv -f tmp/CMakeLists.txt .
 $ rm -rf tmp
 ```
