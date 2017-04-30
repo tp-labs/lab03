@@ -20,9 +20,9 @@ $ export GITHUB_USERNAME=<имя_пользователя>
 
 ```bash
 $ git clone https://github.com/${GITHUB_USERNAME}/lab3 lab4
+$ cd lab4
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab4
-$ cd lab4
 ```
 
 ```bash
@@ -33,7 +33,7 @@ $ file print.a
 $ g++ -I./include -std=c++11 -c examples/example1.cpp
 $ ls example1.o
 $ g++ example1.o print.a -o example1
-$ ./example1
+$ ./example1 && echo
 ```
 
 ```bash
@@ -41,6 +41,14 @@ $ g++ -I./include -std=c++11 -c examples/example2.cpp
 $ ls example2.o
 $ g++ example2.o print.a -o example2
 $ ./example2
+$ cat log.txt && echo
+```
+
+```bash
+$ rm -rf example1.o example2.o print.o 
+$ rm -rf print.a 
+$ rm -rf example1 example2
+$ rm -rf log.txt
 ```
 
 ```bash
@@ -59,13 +67,13 @@ EOF
 
 ```bash
 $ cat >> CMakeLists.txt <<EOF
-add_library(print STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/print.cpp)
+add_library(print STATIC \${CMAKE_CURRENT_SOURCE_DIR}/sources/print.cpp)
 EOF
 ```
 
 ```bash
 $ cat >> CMakeLists.txt <<EOF
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(\${CMAKE_CURRENT_SOURCE_DIR}/include)
 EOF
 ```
 
@@ -77,8 +85,8 @@ $ cmake --build _build
 ```bash
 $ cat >> CMakeLists.txt <<EOF
 
-add_executable(example1 ${CMAKE_CURRENT_SOURCE_DIR}/examples/example1.cpp)
-add_executable(example2 ${CMAKE_CURRENT_SOURCE_DIR}/examples/example2.cpp)
+add_executable(example1 \${CMAKE_CURRENT_SOURCE_DIR}/examples/example1.cpp)
+add_executable(example2 \${CMAKE_CURRENT_SOURCE_DIR}/examples/example2.cpp)
 EOF
 ```
 
@@ -98,16 +106,16 @@ $ cmake --build _build --target example2
 ```
 
 ```bash
-$ ls -la _build/print.a
+$ ls -la _build/libprint.a
 $ _build/example1 && echo
 hello
 $ _build/example2
-$ cat log.txt
+$ cat log.txt && echo
 hello
 ```
 
 ```bash
-$ git clone https://github.com/tp-labs/lab3 tmp
+$ git clone https://github.com/tp-labs/lab4 tmp
 $ mv -f tmp/CMakeLists.txt .
 $ rm -rf tmp
 ```
@@ -120,7 +128,7 @@ $ tree _install
 ```
 
 ```bash
-$ git add -p
+$ git add CMakeLists.txt
 $ git commit -m"added CMakeLists.txt"
 $ git push origin master
 ```
