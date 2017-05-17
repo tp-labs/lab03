@@ -9,8 +9,9 @@ $ open https://cmake.org/
 ## Tasks
 
 - [ ] 1. Создать публичный репозиторий с названием **lab4** на сервисе **GitHub**
-- [ ] 2. Выполнить инструкцию учебного материала
-- [ ] 3. Ознакомиться со ссылками учебного материала
+- [ ] 2. Ознакомиться со ссылками учебного материала
+- [ ] 3. Выполнить инструкцию учебного материала
+- [ ] 4. Составить отчет и отправить ссылку личным сообщением в **Slack**
 
 ## Tutorial
 
@@ -137,3 +138,7 @@ $ git push origin master
 
 - [Autotools](http://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)
 - [CMake](https://cgold.readthedocs.io/en/latest/index.html)
+
+```
+Copyright (c) 2017 Vyacheslav Vershinin
+```
