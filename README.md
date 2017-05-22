@@ -153,5 +153,5 @@ $ gistup -m"lab${LAB_NUMBER}"
 - [CMake](https://cgold.readthedocs.io/en/latest/index.html)
 
 ```
-Copyright (c) 2017 Vyacheslav Vershinin
+Copyright (c) 2017 Братья Вершинины
 ```
