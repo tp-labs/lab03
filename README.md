@@ -2,7 +2,7 @@
 
 Данная лабораторная работа посвещена изучению систем автоматизации сборки проекта на примере **CMake**
 
-```bash
+```ShellSession
 $ open https://cmake.org/
 ```
 
@@ -15,18 +15,18 @@ $ open https://cmake.org/
 
 ## Tutorial
 
-```bash
+```ShellSession
 $ export GITHUB_USERNAME=<имя_пользователя>
 ```
 
-```bash
+```ShellSession
 $ git clone https://github.com/${GITHUB_USERNAME}/lab03 lab04
 $ cd lab04
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab04
 ```
 
-```bash
+```ShellSession
 $ g++ -I./include -std=c++11 -c sources/print.cpp
 $ ls print.o
 $ ar rvs print.a print.o
@@ -37,7 +37,7 @@ $ g++ example1.o print.a -o example1
 $ ./example1 && echo
 ```
 
-```bash
+```ShellSession
 $ g++ -I./include -std=c++11 -c examples/example2.cpp
 $ ls example2.o
 $ g++ example2.o print.a -o example2
@@ -45,45 +45,45 @@ $ ./example2
 $ cat log.txt && echo
 ```
 
-```bash
+```ShellSession
 $ rm -rf example1.o example2.o print.o 
 $ rm -rf print.a 
 $ rm -rf example1 example2
 $ rm -rf log.txt
 ```
 
-```bash
+```ShellSession
 $ cat > CMakeLists.txt <<EOF
 cmake_minimum_required(VERSION 3.0)
 project(print)
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> CMakeLists.txt <<EOF
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> CMakeLists.txt <<EOF
 add_library(print STATIC \${CMAKE_CURRENT_SOURCE_DIR}/sources/print.cpp)
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> CMakeLists.txt <<EOF
 include_directories(\${CMAKE_CURRENT_SOURCE_DIR}/include)
 EOF
 ```
 
-```bash
+```ShellSession
 $ cmake -H. -B_build
 $ cmake --build _build
 ```
 
-```bash
+```ShellSession
 $ cat >> CMakeLists.txt <<EOF
 
 add_executable(example1 \${CMAKE_CURRENT_SOURCE_DIR}/examples/example1.cpp)
@@ -91,7 +91,7 @@ add_executable(example2 \${CMAKE_CURRENT_SOURCE_DIR}/examples/example2.cpp)
 EOF
 ```
 
-```bash
+```ShellSession
 $ cat >> CMakeLists.txt <<EOF
 
 target_link_libraries(example1 print)
@@ -99,14 +99,14 @@ target_link_libraries(example2 print)
 EOF
 ```
 
-```bash
+```ShellSession
 $ cmake --build _build
 $ cmake --build _build --target print
 $ cmake --build _build --target example1
 $ cmake --build _build --target example2
 ```
 
-```bash
+```ShellSession
 $ ls -la _build/libprint.a
 $ _build/example1 && echo
 hello
@@ -115,20 +115,20 @@ $ cat log.txt && echo
 hello
 ```
 
-```bash
+```ShellSession
 $ git clone https://github.com/tp-labs/lab04 tmp
 $ mv -f tmp/CMakeLists.txt .
 $ rm -rf tmp
 ```
 
-```bash
+```ShellSession
 $ cat CMakeLists.txt
 $ cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
 $ cmake --build _build --target install
 $ tree _install
 ```
 
-```bash
+```ShellSession
 $ git add CMakeLists.txt
 $ git commit -m"added CMakeLists.txt"
 $ git push origin master
@@ -136,7 +136,7 @@ $ git push origin master
 
 ## Report
 
-```bash
+```ShellSession
 $ cd ~/workspace/labs/
 $ export LAB_NUMBER=04
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
