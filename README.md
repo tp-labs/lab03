@@ -20,10 +20,10 @@ $ export GITHUB_USERNAME=<имя_пользователя>
 ```
 
 ```ShellSession
-$ git clone https://github.com/${GITHUB_USERNAME}/lab03 lab04
+$ git clone https://github.com/${GITHUB_USERNAME}/lab03.git lab04
 $ cd lab04
 $ git remote remove origin
-$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab04
+$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab04.git
 ```
 
 ```ShellSession
