@@ -20,8 +20,14 @@ $ export GITHUB_USERNAME=<имя_пользователя>
 ```
 
 ```ShellSession
-$ git clone https://github.com/${GITHUB_USERNAME}/lab03.git lab04
-$ cd lab04
+$ cd ${GITHUB_USERNAME}/workspace
+$ pushd .
+$ source scripts/activate
+```
+
+```ShellSession
+$ git clone https://github.com/${GITHUB_USERNAME}/lab03.git projects/lab04
+$ cd projects/lab04
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab04.git
 ```
@@ -29,6 +35,7 @@ $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab04.git
 ```ShellSession
 $ g++ -I./include -std=c++11 -c sources/print.cpp
 $ ls print.o
+$ nm print.o | grep print
 $ ar rvs print.a print.o
 $ file print.a
 $ g++ -I./include -std=c++11 -c examples/example1.cpp
@@ -39,7 +46,7 @@ $ ./example1 && echo
 
 ```ShellSession
 $ g++ -I./include -std=c++11 -c examples/example2.cpp
-$ ls example2.o
+$ nm example2.o
 $ g++ example2.o print.a -o example2
 $ ./example2
 $ cat log.txt && echo
@@ -113,6 +120,7 @@ hello
 $ _build/example2
 $ cat log.txt && echo
 hello
+$ rm -rf log.txt
 ```
 
 ```ShellSession
@@ -137,7 +145,7 @@ $ git push origin master
 ## Report
 
 ```ShellSession
-$ cd ~/workspace/labs/
+$ popd
 $ export LAB_NUMBER=04
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
 $ mkdir reports/lab${LAB_NUMBER}
