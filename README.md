@@ -53,8 +53,8 @@ $ cat log.txt && echo
 ```
 
 ```ShellSession
-$ rm -rf example1.o example2.o print.o 
-$ rm -rf print.a 
+$ rm -rf example1.o example2.o print.o
+$ rm -rf print.a
 $ rm -rf example1 example2
 $ rm -rf log.txt
 ```
