@@ -1,4 +1,4 @@
-## Laboratory work IV
+## Laboratory work III
 
 Данная лабораторная работа посвещена изучению систем автоматизации сборки проекта на примере **CMake**
 
@@ -8,7 +8,7 @@ $ open https://cmake.org/
 
 ## Tasks
 
-- [ ] 1. Создать публичный репозиторий с названием **lab04** на сервисе **GitHub**
+- [ ] 1. Создать публичный репозиторий с названием **lab03** на сервисе **GitHub**
 - [ ] 2. Ознакомиться со ссылками учебного материала
 - [ ] 3. Выполнить инструкцию учебного материала
 - [ ] 4. Составить отчет и отправить ссылку личным сообщением в **Slack**
@@ -26,26 +26,26 @@ $ source scripts/activate
 ```
 
 ```ShellSession
-$ git clone https://github.com/${GITHUB_USERNAME}/lab03.git projects/lab04
-$ cd projects/lab04
+$ git clone https://github.com/${GITHUB_USERNAME}/lab02.git projects/lab03
+$ cd projects/lab03
 $ git remote remove origin
-$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab04.git
+$ git remote add origin https://github.com/${GITHUB_USERNAME}/lab03.git
 ```
 
 ```ShellSession
-$ g++ -I./include -std=c++11 -c sources/print.cpp
+$ g++ -std=c++11 -I./include -c sources/print.cpp
 $ ls print.o
 $ nm print.o | grep print
 $ ar rvs print.a print.o
 $ file print.a
-$ g++ -I./include -std=c++11 -c examples/example1.cpp
+$ g++ -std=c++11 -I./include -c examples/example1.cpp
 $ ls example1.o
 $ g++ example1.o print.a -o example1
 $ ./example1 && echo
 ```
 
 ```ShellSession
-$ g++ -I./include -std=c++11 -c examples/example2.cpp
+$ g++ -std=c++11 -I./include -c examples/example2.cpp
 $ nm example2.o
 $ g++ example2.o print.a -o example2
 $ ./example2
@@ -61,7 +61,7 @@ $ rm -rf log.txt
 
 ```ShellSession
 $ cat > CMakeLists.txt <<EOF
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.4)
 project(print)
 EOF
 ```
@@ -124,7 +124,7 @@ $ rm -rf log.txt
 ```
 
 ```ShellSession
-$ git clone https://github.com/tp-labs/lab04 tmp
+$ git clone https://github.com/tp-labs/lab03 tmp
 $ mv -f tmp/CMakeLists.txt .
 $ rm -rf tmp
 ```
@@ -146,7 +146,7 @@ $ git push origin master
 
 ```ShellSession
 $ popd
-$ export LAB_NUMBER=04
+$ export LAB_NUMBER=03
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
 $ mkdir reports/lab${LAB_NUMBER}
 $ cp tasks/lab${LAB_NUMBER}/README.md reports/lab${LAB_NUMBER}/REPORT.md
