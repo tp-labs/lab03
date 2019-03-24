@@ -1,0 +1,16 @@
+#include "solver.h"
+
+#include <stdexcept>
+
+void solve(float a, float b, float c, float& x1, float& x2)
+{
+    float d = (b * b) - (4 * a * c);
+
+    if (d < 0)
+    {
+        throw std::logic_error("error d < 0!");
+    }
+
+    x1 = (-b - std::sqrtf(d)) / (2 * a);
+    x2 = (-b + std::sqrtf(d)) / (2 * a);
+}
