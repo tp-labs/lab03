@@ -10,5 +10,4 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib ${CMAKE_CURRENT
 
 add_executable(example equation.cpp)
 
-target_link_libraries(example solver_lib)
-target_link_libraries(example formatter_ex)
+target_link_libraries(example solver_lib formatter_ex)
