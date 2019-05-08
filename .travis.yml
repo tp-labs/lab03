@@ -1,14 +1,16 @@
 language: cpp
+compiler: gcc
 
-script:
-- cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
-- cmake --build _build
-- cmake --build _build --target install
-
+os: linux
 addons:
   apt:
     sources:
-      - george-edison55-precise-backports
+      - ubuntu-toolchain-r-test
     packages:
-      - cmake
-      - cmake-data
+      - g++-7
+script:
+- export CC=gcc-7
+- export CXX=g++-7
+- cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
+- cmake --build _build
+- cmake --build _build --target install
