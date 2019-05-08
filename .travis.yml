@@ -11,6 +11,6 @@ addons:
 script:
 - export CC=gcc-7
 - export CXX=g++-7
-- cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
-- cmake --build _build
-- cmake --build _build --target install
+- cmake --version
+- cmake CMakeLists.txt
+- cmake  --build . --target neat
