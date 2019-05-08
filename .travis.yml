@@ -1,5 +1,5 @@
 language: cpp
-compiler: gcc
+compiler: clang
 
 os: linux
 addons:
@@ -7,10 +7,9 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - g++-7
+      - clang-6.0
 script:
-- export CC=gcc-7
-- export CXX=g++-7
+- export CXX=clang++-6.0
 - cmake --version
 - cmake CMakeLists.txt
 - cmake --build . --target example_s
