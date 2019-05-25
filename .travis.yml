@@ -19,3 +19,7 @@ addons:
 script:
 - cmake CMakeLists.txt
 - cmake --build .
+
+notifications:
+    email: false
+
