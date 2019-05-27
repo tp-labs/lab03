@@ -1,0 +1,24 @@
+os:
+ - linux
+
+language: cpp
+
+compiler:
+  - gcc
+  - clang
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-precise-3.6
+    packages:
+      - g++-7
+      - clang-3.6
+
+script:
+- cmake CMakeLists.txt
+- cmake --build .
+
+notifications:
+    email: false
