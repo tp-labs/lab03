@@ -2,7 +2,7 @@
 
 Данная лабораторная работа посвещена изучению систем автоматизации сборки проекта на примере **CMake**
 
-```ShellSession
+```sh
 $ open https://cmake.org/
 ```
 
@@ -15,24 +15,24 @@ $ open https://cmake.org/
 
 ## Tutorial
 
-```ShellSession
+```sh
 $ export GITHUB_USERNAME=<имя_пользователя>
 ```
 
-```ShellSession
+```sh
 $ cd ${GITHUB_USERNAME}/workspace
 $ pushd .
 $ source scripts/activate
 ```
 
-```ShellSession
+```sh
 $ git clone https://github.com/${GITHUB_USERNAME}/lab02.git projects/lab03
 $ cd projects/lab03
 $ git remote remove origin
 $ git remote add origin https://github.com/${GITHUB_USERNAME}/lab03.git
 ```
 
-```ShellSession
+```sh
 $ g++ -std=c++11 -I./include -c sources/print.cpp
 $ ls print.o
 $ nm print.o | grep print
@@ -44,7 +44,7 @@ $ g++ example1.o print.a -o example1
 $ ./example1 && echo
 ```
 
-```ShellSession
+```sh
 $ g++ -std=c++11 -I./include -c examples/example2.cpp
 $ nm example2.o
 $ g++ example2.o print.a -o example2
@@ -52,45 +52,45 @@ $ ./example2
 $ cat log.txt && echo
 ```
 
-```ShellSession
+```sh
 $ rm -rf example1.o example2.o print.o
 $ rm -rf print.a
 $ rm -rf example1 example2
 $ rm -rf log.txt
 ```
 
-```ShellSession
+```sh
 $ cat > CMakeLists.txt <<EOF
 cmake_minimum_required(VERSION 3.4)
 project(print)
 EOF
 ```
 
-```ShellSession
+```sh
 $ cat >> CMakeLists.txt <<EOF
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 EOF
 ```
 
-```ShellSession
+```sh
 $ cat >> CMakeLists.txt <<EOF
 add_library(print STATIC \${CMAKE_CURRENT_SOURCE_DIR}/sources/print.cpp)
 EOF
 ```
 
-```ShellSession
+```sh
 $ cat >> CMakeLists.txt <<EOF
 include_directories(\${CMAKE_CURRENT_SOURCE_DIR}/include)
 EOF
 ```
 
-```ShellSession
+```sh
 $ cmake -H. -B_build
 $ cmake --build _build
 ```
 
-```ShellSession
+```sh
 $ cat >> CMakeLists.txt <<EOF
 
 add_executable(example1 \${CMAKE_CURRENT_SOURCE_DIR}/examples/example1.cpp)
@@ -98,7 +98,7 @@ add_executable(example2 \${CMAKE_CURRENT_SOURCE_DIR}/examples/example2.cpp)
 EOF
 ```
 
-```ShellSession
+```sh
 $ cat >> CMakeLists.txt <<EOF
 
 target_link_libraries(example1 print)
@@ -106,14 +106,14 @@ target_link_libraries(example2 print)
 EOF
 ```
 
-```ShellSession
+```sh
 $ cmake --build _build
 $ cmake --build _build --target print
 $ cmake --build _build --target example1
 $ cmake --build _build --target example2
 ```
 
-```ShellSession
+```sh
 $ ls -la _build/libprint.a
 $ _build/example1 && echo
 hello
@@ -123,20 +123,20 @@ hello
 $ rm -rf log.txt
 ```
 
-```ShellSession
+```sh
 $ git clone https://github.com/tp-labs/lab03 tmp
 $ mv -f tmp/CMakeLists.txt .
 $ rm -rf tmp
 ```
 
-```ShellSession
+```sh
 $ cat CMakeLists.txt
 $ cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
 $ cmake --build _build --target install
 $ tree _install
 ```
 
-```ShellSession
+```sh
 $ git add CMakeLists.txt
 $ git commit -m"added CMakeLists.txt"
 $ git push origin master
@@ -144,7 +144,7 @@ $ git push origin master
 
 ## Report
 
-```ShellSession
+```sh
 $ popd
 $ export LAB_NUMBER=03
 $ git clone https://github.com/tp-labs/lab${LAB_NUMBER} tasks/lab${LAB_NUMBER}
@@ -189,5 +189,5 @@ $ gist REPORT.md
 - [CMake](https://cgold.readthedocs.io/en/latest/index.html)
 
 ```
-Copyright (c) 2015-2019 The ISC Authors
+Copyright (c) 2015-2020 The ISC Authors
 ```
