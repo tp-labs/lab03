@@ -1,5 +1,7 @@
 ## Laboratory work III
 
+[![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/tp-labs/lab03/master/preview.png)](https://yandex.ru/efir/?stream_id=vjKAlxJ0UQrs)
+
 Данная лабораторная работа посвещена изучению систем автоматизации сборки проекта на примере **CMake**
 
 ```sh
