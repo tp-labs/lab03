@@ -1,7 +1,5 @@
 ## Laboratory work III
 
-<a href="https://yandex.ru/efir/?stream_id=vjKAlxJ0UQrs"><img src="https://raw.githubusercontent.com/tp-labs/lab03/master/preview.png" width="640"/></a>
-
 Данная лабораторная работа посвещена изучению систем автоматизации сборки проекта на примере **CMake**
 
 ```sh
@@ -191,5 +189,5 @@ $ gist REPORT.md
 - [CMake](https://cgold.readthedocs.io/en/latest/index.html)
 
 ```
-Copyright (c) 2015-2020 The ISC Authors
+Copyright (c) 2015-2021 The ISC Authors
 ```
