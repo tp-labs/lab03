@@ -1,0 +1,3 @@
+/Users/ksenia55/lab03/formatter_lib/_build/CMakeFiles/formatter.dir
+/Users/ksenia55/lab03/formatter_lib/_build/CMakeFiles/edit_cache.dir
+/Users/ksenia55/lab03/formatter_lib/_build/CMakeFiles/rebuild_cache.dir

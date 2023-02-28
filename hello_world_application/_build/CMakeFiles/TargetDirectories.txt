@@ -1,0 +1,3 @@
+/Users/ksenia55/lab03/hello_world_application/_build/CMakeFiles/hello_world.dir
+/Users/ksenia55/lab03/hello_world_application/_build/CMakeFiles/edit_cache.dir
+/Users/ksenia55/lab03/hello_world_application/_build/CMakeFiles/rebuild_cache.dir

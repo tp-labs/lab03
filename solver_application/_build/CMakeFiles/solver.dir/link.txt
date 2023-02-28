@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/solver.dir/equation.cpp.o -o solver  -lformatter-NOTFOUND -lformatter_ex-NOTFOUND -lsolver_lib-NOTFOUND 
